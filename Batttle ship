@@ -1,1 +1,13 @@
 #Battle ship game
+#for x in range(5):
+#  for c in range(5):
+#    ray[x][c].append(0)
+#this is the "ocaen"/ were the ships are
+ocean = [[0,0,0,0,0],
+        [0,0,0,0,0],
+        [0,0,0,0,0],
+        [0,0,0,0,0],
+        [0,0,0,0,0]]
+#prints the ocaen
+for x in ocean:
+    print(x)
