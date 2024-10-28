@@ -1,4 +1,5 @@
 import random
+ships = 2
 #Battle ship game
 #for x in range(5):
 #  for c in range(5):
@@ -13,9 +14,19 @@ ocean = [[0,0,0,0,0],
     [0,0,0,0,0],
     [0,0,0,0,0]]
 #made the loop
-while(True):
+while(ships != 0):
 #prints the ocaen
     for x in ocean:
         print(x)
-
-
+#takes the user input
+    user = int(input("where would you like to take a shot at 0-25 "))
+    if ranOne == user:
+        print("hit")
+        ships -= 1
+    elif ranTwo == user:
+        print("hit")
+        ships -= 1
+    else:
+        print("miss")
+if ships == 0:
+    print("you win")
