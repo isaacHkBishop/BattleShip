@@ -1,15 +1,21 @@
+import random
 #Battle ship game
 #for x in range(5):
 #  for c in range(5):
 #    ray[x][c].append(0)
-#this is the "ocaen"/ were the ships are]
-#made the loop
-while(True):
-    ocean = [[0,0,0,0,0],
+#makes were the ship is/the place were they nead the shot to hit
+ranOne = random.randint(1, 5)
+ranTwo = random.randint(1, 5)
+#this is the "ocaen"/ were the ships are
+ocean = [[0,0,0,0,0],
     [0,0,0,0,0],
     [0,0,0,0,0],
     [0,0,0,0,0],
     [0,0,0,0,0]]
+#made the loop
+while(True):
 #prints the ocaen
     for x in ocean:
         print(x)
+
+
