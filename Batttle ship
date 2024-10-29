@@ -34,5 +34,5 @@ while(ships != 0):
         print("how much ammunition you used", ammunition,"how many ships you got rid of",shipgone)
 #meant to make the game end if ammunition is 0
     if ammunition < 1:
-        ships == 0
+        ships = 0
         print("how much ammunition you used",ammunition,"how many ships are left",ships)
