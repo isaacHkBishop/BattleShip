@@ -15,27 +15,88 @@ ocean = [[0,0,0,0,0],
     [0,0,0,0,0]]
 #made the loop
 ships = 1
-while(ships != 0):
+#see if the user wants to make there own size ocean
+hold = input(print("do you want to make the size of the ocean? YES or NO"))
+if hold != "YES" or hold != "yes" or hold != "NO" or hold != "no":
+    while(hold != "YES" or hold != "yes" or hold != "NO" or hold != "no"):
+        hold = input(print("please say yes or no"))
+#if no we use the pre made one
+if hold == "NO" or "no":
+    while(ships != 0):
 #prints the ocaen
-    for x in ocean:
+        for x in ocean:
         print(x)
 #takes the user input
-    print("where would you like to take a shot at it's a 5 by 5 grid")
-    userOne = int(input(print("what row do you want to hit?")))
-    userTwo = int(input(print("what colum do you want to hit?")))
-#checks to see if its in the range
-    if userOne < 6 and userOne > 0 and userTwo < 6 and userTwo > 0:
-        if ranOne == userOne -1 and ranTwo == userTwo -1:
-            print("hit")
-            ships -= 1
-        else:
-            print("miss")
-        ocean[userOne -1][userTwo -1] == "X"
-#if its not in range they re do
-    else:
-        print("pleas have your number range from 1 to 5")
+        print("where would you like to take a shot at it's a 5 by 5 grid")
         userOne = int(input(print("what row do you want to hit?")))
         userTwo = int(input(print("what colum do you want to hit?")))
+#checks to see if its in the range
+        if userOne < 6 and userOne > 0 and userTwo < 6 and userTwo > 0:
+            if ranOne == userOne -1 and ranTwo == userTwo -1:
+                print("hit")
+                ships -= 1
+            else:
+                print("miss")
+            ocean[userOne -1][userTwo -1] == "X"
+#if its not in range they re do
+        else:
+            print("pleas have your number range from 1 to 5")
+            userOne = int(input(print("what row do you want to hit?")))
+            userTwo = int(input(print("what colum do you want to hit?")))
 #win
-if ships == 0:
-    print("you win")
+        if ships == 0:
+        print("you win")
+#if yes they make there own
+if hold == "yes" or "YES":
+# Get user input for the number of rows and columns
+    rows = int(input("Enter the number of rows: "))
+    cols = int(input("Enter the number of columns: "))
+#checks to see if its biger then a 3 by 3 grid
+    if rows !> 3 and cols !> 3:
+        print("please have the grid be biger then a 3 rows and 3 columns")
+        rows = int(input("Enter the number of rows: "))
+        cols = int(input("Enter the number of columns: "))
+
+# Create the 2D array
+    newOcean = createArray(rows, cols)
+
+    ranOne = random.randint(0, rows -1)
+    ranTwo = random.randint(0, cols -1)
+
+    ships = 1
+
+    while(ships != 0):
+#prints the ocaen
+        for x in newOcean:
+        print(x)
+#takes the user input
+        print("where would you like to take a shot at it's a " + rows + " by " + cols + " grid")
+        userOne = int(input(print("what row do you want to hit?")))
+        userTwo = int(input(print("what colum do you want to hit?")))
+#checks to see if its in the range
+        if userOne < rows +1 and userOne > 0 and userTwo < cols +1 and userTwo > 0:
+            if ranOne == userOne -1 and ranTwo == userTwo -1:
+                print("hit")
+                ships -= 1
+            else:
+                print("miss")
+            newOcean[userOne -1][userTwo -1] == "X"
+#if its not in range they re do
+        else:
+            print("pleas have your number range from 1 to 5")
+            userOne = int(input(print("what row do you want to hit?")))
+            userTwo = int(input(print("what colum do you want to hit?")))
+#win
+        if ships == 0:
+        print("you win")
+
+# Function to create a 2D array
+def createArray(rows, cols):
+    # Initialize a 2D array with zeros
+    array = []
+    for i in range(rows -1):
+        row = []  # Create a new row
+        for j in range(cols -1):
+            row.append(0)  # Fill the row with zeros
+        array.append(row)  # Add the row to the 2D array
+    return array
