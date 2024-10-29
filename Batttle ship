@@ -1,5 +1,7 @@
 import random
 ships = 2
+ammunition = 5
+shipgone = 0
 #Battle ship game
 #for x in range(5):
 #  for c in range(5):
@@ -20,15 +22,22 @@ while(ships != 0):
         print(x)
 #takes the user input
     user = int(input("where would you like to take a shot at 0-25 "))
-#makes the game work by adding hit and miss
     if ranOne == user:
         print("hit")
         ships -= 1
+        ammunition -= 1
+        shipgone += 1
     elif ranTwo == user:
         print("hit")
         ships -= 1
+        ammunition -= 1
+        shipgone += 1
     else:
         print("miss")
-#to end the game when the ships = 0
+        ammunition -= 1
 if ships == 0:
     print("you win")
+    print("how much ammunition you used", ammunition,"how many ships you got rid of",shipgone)
+if ammunition == 0:
+    ships == 0
+    print("how much ammunition you used", ammunition,"how many ships are left",ships)
