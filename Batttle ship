@@ -20,6 +20,7 @@ while(ships != 0):
         print(x)
 #takes the user input
     user = int(input("where would you like to take a shot at 0-25 "))
+#makes the game work by adding hit and miss
     if ranOne == user:
         print("hit")
         ships -= 1
@@ -28,5 +29,6 @@ while(ships != 0):
         ships -= 1
     else:
         print("miss")
+#to end the game when the ships = 0
 if ships == 0:
     print("you win")
