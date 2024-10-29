@@ -1,10 +1,3 @@
-import random
-ships = 2
-ammunition = 5
-shipgone = 0
-#Battle ship game
-#for x in range(5):
-#  for c in range(5):
 #    ray[x][c].append(0)
 #makes were the ship is/the place were they nead the shot to hit
 ranOne = random.randint(1, 5)
@@ -35,9 +28,11 @@ while(ships != 0):
     else:
         print("miss")
         ammunition -= 1
-if ships == 0:
-    print("you win")
-    print("how much ammunition you used", ammunition,"how many ships you got rid of",shipgone)
-if ammunition == 0:
-    ships == 0
-    print("how much ammunition you used", ammunition,"how many ships are left",ships)
+#code to make the game end
+    if ships == 0:
+        print("you win")
+        print("how much ammunition you used", ammunition,"how many ships you got rid of",shipgone)
+#meant to make the game end if ammunition is 0
+    if ammunition < 1:
+        ships == 0
+        print("how much ammunition you used",ammunition,"how many ships are left",ships)
